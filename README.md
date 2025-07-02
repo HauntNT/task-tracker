@@ -55,5 +55,3 @@ delete 1
 #Stop the app
 exit
 ```
-## Project URL:
-https://github.com/HauntNT/task-tracker
