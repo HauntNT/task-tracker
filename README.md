@@ -55,4 +55,4 @@ delete 1
 #Stop the app
 exit
 ```
-[Idea]([[https://github.com/HauntNT/task-tracker](https://roadmap.sh/projects/task-tracker](https://roadmap.sh/projects/task-tracker)))
+[Idea](https://roadmap.sh/projects/task-tracker)
