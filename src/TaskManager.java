@@ -28,6 +28,7 @@ public class TaskManager {
             updTask.setDescription(newDescription);
             updTask.setUpdatedAt();
             json.writeJSON(taskMap, filePath);
+            System.out.println("Task updated succesfully");
         } else {
             System.out.println("Theres no task related to that ID");
         }
@@ -39,10 +40,13 @@ public class TaskManager {
             if (changedStatus == "todo" || changedStatus == "in-progress" || changedStatus == "done") {
                 updTask.setStatus(changedStatus);
                 updTask.setUpdatedAt();
-                json.writeJSON(taskMap, filePath);  
+                json.writeJSON(taskMap, filePath);
+                System.out.println("Task status updated to "+changedStatus+" succesfully!"); 
             } else {
                 System.out.println("The Status value must be: \ntodo, in-progress or done");
             }
+        } else{ 
+            System.out.println("Theres no task related to that ID");
         }
     }
     //Show all the tasks

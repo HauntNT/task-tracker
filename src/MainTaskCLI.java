@@ -57,10 +57,10 @@ public class MainTaskCLI {
             try {
                 int id = Integer.parseInt(parts[0]);
                 manager.updateDescription(id, parts[1]);
-                System.out.println("Task updated succesfully");
             } catch (NumberFormatException e) {
                 System.out.println("ERROR: ID must be a valid number");
             }
+            return;
         }
         //This command is easier because it's just the delete and the id, so we don't use the extractByParts() method
         if (line.toLowerCase().startsWith("delete")) {
@@ -92,7 +92,6 @@ public class MainTaskCLI {
                 //We take the second item in the array wich is the id and try to parse it, then we call the updateStatus() from the manager and type the "in-progress" status
                 int id = Integer.parseInt(tokens[1]);
                 manager.updateStatus(id, "in-progress");
-                System.out.println("Task status updated to in progress succesfully!");
             } catch (NumberFormatException e) {
                 System.out.println("ERROR: ID must be a valid number");
             }
@@ -108,7 +107,6 @@ public class MainTaskCLI {
             try {
                 int id = Integer.parseInt(tokens[1]);
                 manager.updateStatus(id, "done");
-                System.out.println("Task status updated to done succesfully!");
             } catch (NumberFormatException e) {
                 System.out.println("ERROR: ID must be a valid number");
             }
@@ -117,20 +115,28 @@ public class MainTaskCLI {
         //The list if's are only going to read the keyword, and then call the list method that are defined in the tasks manager
         if (line.equalsIgnoreCase("list")) {
             manager.showTasks();
+            return;
         }
         if (line.equalsIgnoreCase("list done")) {
             manager.doneTasks();
+            return;
         }
         if (line.equalsIgnoreCase("list todo")) {
             manager.todoTasks();
+            return;
         }
         if (line.equalsIgnoreCase("list in-progress")) {
             manager.inProgressTasks();
+            return;
         }
         //Command to exit the program, we make the inUse false so we can brake the while of the main
         if (line.toLowerCase().equals("exit")) {
             System.out.println("Leaving the CLI...");
             inUse = false;
+            return;
+        } else {
+            System.out.println("This is not a supported command, try with:");
+            printHelp();
         }
     }
     //Method used in the updateDescription command
