@@ -7,7 +7,7 @@ The commands that this program include are:
 - `update` "id" "new description": update an existing task using the id of the task and the new description.
 - `delete` "id": delete a task by the id.
 - `mark-in-progress` "id": mark the task status "in-progress" by the id.
-- `mark-done` "id>" mark the task status "done" by the id.
+- `mark-done` "id" mark the task status "done" by the id.
 - `list`: list all the tasks.
 - `list done`: list all the tasks that have a "done" status.
 - `list todo`: list all the tasks that have a "todo" status.
